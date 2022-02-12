@@ -1,0 +1,14 @@
+{% extends 'Aplicacion/Gallery.html'%}
+{%block content%}
+
+{%for i in video%}
+<div class="item" data-toggle="tooltip" title="{{i.Name}}">
+  <input type="checkbox" class="checkbox" name="checks[]" value="{{i.id}}">
+  <a data-src="{{i.Video.url}}" class="border_image" data-fancybox="video-gallery">
+    <video>
+      <source src="{{i.Video.url}}">
+    </video>
+  </a>
+</div>
+{%endfor%}
+{% endblock %}

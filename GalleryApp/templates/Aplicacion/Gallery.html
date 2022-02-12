@@ -1,0 +1,175 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Gallery</title>
+
+
+
+
+
+  <!-- Bootstrap core CSS -->
+
+  <link rel="stylesheet" href="{%static '/Aplicacion/css/bootstrap.min.css'%}">
+  
+
+
+  <!-- Custom styles for this template -->
+
+  <link rel="stylesheet" href="{%static '/Aplicacion/estilos/gallerys.css'%}">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+
+</head>
+
+<body>
+  
+  <header class="p-2 bg-dark text-white w-100 sticky-top">
+    <div class="container m-0 mw-100">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img src="{%static '/Aplicacion/img/login_as_user_32px.png'%}" alt="">
+          </svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class=" sidebar  d-flex flex-column flex-shrink-0 bg-dark" style="width: 4.5rem;">
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+          <li class="nav-item">
+            <a href="#" class="nav-link py-3 text-white" aria-current="page" title="" data-bs-toggle="tooltip"
+              data-bs-placement="right" data-bs-original-title="Home">
+              <i class="fas fa-home fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'gallery'%}" class="nav-link py-3 text-white" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+              data-bs-original-title="Photo">
+              <i class="fas fa-images fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'video'%}" class="nav-link py-3 text-white" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+              data-bs-original-title="Video">
+              <i class="fas fa-video fa-lg"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link py-3 text-white" title="" data-bs-toggle="tooltip" data-bs-placement="right"
+              data-bs-original-title="Gallery">
+              <i class="fas fa-photo-video fa-lg"></i>
+            </a>
+          </li>
+
+        </ul>
+        <div class="dropdown border-top">
+          <a href="#"
+            class="d-flex align-items-center justify-content-center p-3 text-white text-decoration-none dropdown-toggle"
+            data-toggle="dropdown">
+            <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small shadow text-white">
+
+            <li><a class="dropdown-item" href="{% url 'logout'%}">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+      <main class="col-md-9 col-lg-11 ms-sm-auto ps-0">
+        
+        <div class="modal" id="myModal">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form enctype="multipart/form-data" method="POST" action="">
+                  {% csrf_token %}
+                  {{ form.as_p}}
+                  <input type="submit" value="Upload" />
+
+                </form>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <form action="" method="post" >
+          {% csrf_token %}
+          <div class="row-1">
+            <div class="col-ms-5 px-4 pt-2">
+              <button type="button" class="btn btn-secondary"><i class="fas fa-check-double"></i></button>
+              <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i
+                  class="fas fa-file-upload"></i></button>
+
+            </div>
+          </div>
+          <div class="grid">
+            {% block content %}
+            {%for i in image%}
+            <div class="item" data-toggle="tooltip" title="{{i.Name}}">
+              <input type="checkbox" class="checkbox" name="checks[]" value="{{i.id}}">
+              <a href="{{i.Image.url}}" class="border_image">
+                <img src="{{i.Image.url}}" alt="" data-fancybox="gallery">
+              </a>
+            </div>
+            {%endfor%}
+            {% endblock %}
+          </div>
+        </form>
+
+
+      </main>
+    </div>
+  </div>
+
+
+
+
+  
+  <script src="https://kit.fontawesome.com/a780e058d1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="{%static '/Aplicacion/js/bootstrap.min.js'%}"></script>
+  
+</body>
+
+</html>

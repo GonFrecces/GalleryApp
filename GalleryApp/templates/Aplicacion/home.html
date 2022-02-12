@@ -1,0 +1,110 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100 w-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Home</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a780e058d1.js" crossorigin="anonymous"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="{%static '/Aplicacion/estilos/covers.css'%}" rel="stylesheet">
+
+
+</head>
+
+<body class=" text-white h-100 w-100 p-3">
+  
+  <header class="px-3 py-5 text-white" style="height: 203px; text-align: right;">
+    <input class="burger-check" id="burger-check" type="checkbox" style="text-align: center;">
+    <label for="burger-check" class="burger"></label>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+  <div class="row">
+    <div class="col">
+      <main class="px-3 py-5 h-90 w-100 p-3 text-center">
+        <img class="mb-4" src="{% static '/Aplicacion/img/login_as_user_45px.png'%}">
+        <h1>※ Bigote Travel ※</h1>
+        <h2 class="lead">Blog informativo de tips para viajeros entusiastas al treakking en lugares increibles,
+          pasa y conoce las galerias de los paisajes.
+        </h2>
+        <div class="frame">
+
+          <a href="http://themonkey.co" class="button b-green">Green Button</a>
+        </div>
+        <div class="ctn">
+
+          <a href="http://themonkey.co" class="button b-pink">Pink Button</a>
+          <a href="http://themonkey.co" class="button b-red">Red Button</a>
+          <a href="http://themonkey.co" class="button b-orange">Orange Button</a>
+          <a href="http://themonkey.co" class="button b-blue">Blue Button</a>
+
+        </div>
+        <!-- hover animation 2 -->
+        <button class="btn btn--hoverEffect2">Hover 2</button>
+      </main>
+    </div>
+  </div>
+  <footer class="mt-auto text-white-50 text-center">
+    <div class="wrapper">
+      <div class="icon facebook">
+        <div class="tooltip">Facebook</div>
+        <span><i class="fab fa-facebook-f"></i></span>
+      </div>
+      <div class="icon twitter">
+        <div class="tooltip">Twitter</div>
+        <span><i class="fab fa-twitter"></i></span>
+      </div>
+      <div class="icon instagram">
+        <div class="tooltip">Instagram</div>
+        <span><i class="fab fa-instagram"></i></span>
+      </div>
+      <div class="icon youtube">
+        <div class="tooltip">Youtube</div>
+        <span><i class="fab fa-youtube"></i></span>
+      </div>
+    </div>
+    <p>by c.a.v.z</p>
+  </footer>
+</body>
+
+</html>

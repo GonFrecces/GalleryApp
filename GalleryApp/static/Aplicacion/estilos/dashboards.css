@@ -1,0 +1,387 @@
+/* ligth theme colors */
+html{
+  --bg: #1B1A17;
+  --bg-panel: #393e46;/*box container*/
+  --color-headings: #FCFCFC;/*heading*/
+  --color-text: #393e46;/*paragraph*/
+  --bg-banner: url('../img/bienvenido22.jpg') no-repeat;
+
+}
+/* sea theme colors */
+html[data-theme='sea']{
+  --bg: #2979FF;
+  --bg-panel: #344FA1;
+  --color-headings: #FCFCFC;
+  --color-text: #B5B5B5;
+  --bg-banner: url('../img/sea.jpg') no-repeat;
+}
+
+/* forrest theme colors */
+html[data-theme='forrest']{
+  --bg: #00917C;
+  --bg-panel: #0b7909;
+  --color-headings: #FCFCFC;
+  --color-text: #B5B5B5;
+  --bg-banner: url('../img/fr.jpg') no-repeat;
+}
+
+/* flame theme colors */
+html[data-theme='flame']{
+  --bg: #E65100;
+  --bg-panel: #AC3F21;
+  --color-headings: #FCFCFC;
+  --color-text: #BE6A15;
+  --bg-banner: url('../img/fl.jpg') no-repeat;
+}
+
+/* earth theme colors */
+html[data-theme='earth']{
+  --bg: #6E3B3B;
+  --bg-panel: #625261;
+  --color-headings: #FCFCFC;
+  --color-text: #393e46;
+  --bg-banner: url('../img/earth.jpg') no-repeat;
+}
+
+
+
+
+/* box container */
+.box{
+  display:grid;
+  grid-template-rows: auto auto;
+  border-radius: 15px;
+  padding:30px;
+  width:36vw;
+  background: url('../img/fr.jpg') no-repeat;
+  background-size: 100% 100%;
+  letter-spacing: 0.05rem;
+}
+
+.box2{
+  display:grid;
+  grid-template-rows: auto auto;
+  border-radius: 15px;
+  padding:30px;
+  width:36vw;
+  background: url('../img/sea.jpg') no-repeat;
+  background-size: 100% 100%;
+  letter-spacing: 0.05rem;
+}
+
+.box3{
+  display:grid;
+  grid-template-rows: auto auto;
+  border-radius: 15px;
+  padding:30px;
+  width:36vw;
+  background: url('../img/fl.jpg') no-repeat;
+  background-size: 100% 100%;
+  letter-spacing: 0.05rem;
+}
+
+.box4{
+  display:grid;
+  grid-template-rows: auto auto;
+  border-radius: 15px;
+  padding:30px;
+  width:36vw;
+  background: url('../img/earth.jpg') no-repeat;
+  background-size: 100% 100%;
+  letter-spacing: 0.05rem;
+}
+
+h2[class=t_theme]{
+  font-size: 2.18rem;/*35px*/
+  margin: 20px 0;
+  color:var(--color-headings);
+  text-shadow:1px 2px #393e46;
+}
+div h2 span{
+  float: right;
+}
+
+form[id=form1]{
+  margin-top: 0.7rem;
+
+}
+
+form[id=form2]{
+  margin-top: 0.7rem;
+}
+/* checkbox toggler */
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label[id=check1]{
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: #393e46;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+
+label[id=check2]{
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: #393e46;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+
+
+
+
+label[id=check1]:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #2979FF;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+label[id=check2]:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #00917C;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+
+input[id=checkbox1]:checked + label[id=check1] {
+    background: var(--color-headings);
+}
+input[id=checkbox1]:checked + label[id=check1]:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+label[id=check1]:active:after {
+    width: 45px;
+}
+
+
+input[id=checkbox2]:checked + label[id=check2] {
+    background: var(--color-headings);
+}
+input[id=checkbox2]:checked + label[id=check2]:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+label[id=check2]:active:after {
+    width: 45px;
+}
+
+
+
+label[id=check3]{
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: #393e46;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+
+label[id=check4]{
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: #393e46;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+label[id=check3]:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #EAB64D;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+label[id=check4]:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #A35638;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+
+
+input[id=checkbox3]:checked + label[id=check3] {
+    background: var(--color-headings);
+}
+input[id=checkbox3]:checked + label[id=check3]:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+label[id=check3]:active:after {
+    width: 45px;
+}
+
+
+input[id=checkbox4]:checked + label[id=check4] {
+    background: var(--color-headings);
+}
+input[id=checkbox4]:checked + label[id=check4]:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+label[id=check4]:active:after {
+    width: 45px;
+}
+
+
+
+
+/* transition */
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+
+header{
+  background: var(--bg);
+}
+
+nav[id=sidebarMenu]{
+  background:var(--bg-panel);
+}
+
+svg ,path, circle,rect,polygon,polyline,line{
+  color: var(--color-headings);
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #2470dc;
+}
+
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
