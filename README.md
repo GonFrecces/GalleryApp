@@ -14,7 +14,7 @@ here sometimes things missing.
  Missing for create 🔢 
  ----------------------------------------------------------
 - Create crud : edit for image and video (edit the name for the moment)
-- Create a conditional for insert video for size : 40 mb max in format MOV. (serach format permited)
+- Create a conditional for insert video for size : 40 mb max in format MOV. (search format permited)
 - Create a conditional for images in format : JPEG, NEF (RAW) + JPEG
 - Edit desing to menu in dashboard manager becasuse is not navegate
 - It is possible include these format : PNG,  TIFF, DNG.
